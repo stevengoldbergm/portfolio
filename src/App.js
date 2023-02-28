@@ -8,7 +8,6 @@ import TechStack from "./components/pages/TechStack";
 function App() {
   return (
     <Layout>
-      <div>This is my starter div</div>
       <AboutMe />
       <TechStack />
       <MyWork />

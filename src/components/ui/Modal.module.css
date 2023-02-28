@@ -1,0 +1,35 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(230, 230, 230, 0.766);
+  height: 100%;
+  width: 150%;
+  z-index: 999;
+}
+
+.modal.leadIn {
+  animation: lead-in 500ms forwards;
+}
+
+.modal.leadOut {
+  animation: lead-out 500ms forwards;
+}
+
+@keyframes lead-in {
+  from {
+    translate: 0 -150vh ;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes lead-out {
+  from {
+    translate: 0 0 ;
+  }
+  to {
+    translate: 0 -150vh;
+  }
+}

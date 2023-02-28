@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  max-width: 10rem;
+}
+
+.input {
+  max-width: 65ch;
+}

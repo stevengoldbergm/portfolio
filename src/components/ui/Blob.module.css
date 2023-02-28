@@ -1,0 +1,51 @@
+.blob {
+  animation: rotate 10s infinite, wiggle 20s infinite, size-up 10s infinite;
+  filter: blur(2rem);
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    translate: -50% -50%;
+    animation-timing-function: ease-in-out;
+  }
+  25% {
+    translate: -55% -45%;
+    scale: 85% ;
+    animation-timing-function: ease-in-out;
+  }
+  50% {
+    translate: -45% -55%;
+    scale: 70%;
+    animation-timing-function: ease-in-out;
+  }
+  76% {
+    translate: -45% -45%;
+    scale: 85%;
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    translate: -50% -50%;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes size-up {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 75% ;
+  }
+  100% {
+    scale: 100%;
+  }
+}
