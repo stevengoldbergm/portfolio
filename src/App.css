@@ -1,0 +1,84 @@
+/* Navigation */
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 5rem;
+  padding-block: .5rem;
+}
+
+.ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  justify-content: flex-end;
+}
+
+.li {
+  padding-inline: 1em;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.a {
+  text-decoration: none;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* background-image: url(./imgs/purple_background.jpg); */
+  background: linear-gradient(.6turn, rgb(108, 38, 108), rgb(219, 205, 166));
+  background-size: 100%;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* background-position-y: bottom; */
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-inline: auto;
+  max-width: 50rem;
+  height: 25rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.h1 {
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  font-weight: bolder;
+  text-align: center;
+  /* -webkit-text-stroke-width: .1rem;
+  -webkit-text-stroke-color: rgba(70, 18, 134, 0.659); */
+}
+
+.h2 {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-align: center;
+  /* -webkit-text-stroke-width: .1rem;
+  -webkit-text-stroke-color: rgba(70, 18, 134, 0.659); */
+}
+
+.button {
+  border-radius: .3rem;
+  padding: .3rem;
+  text-align: center;
+  border: 0;
+  background-color: rgb(255, 255, 255);
+  font-weight: 500;
+}

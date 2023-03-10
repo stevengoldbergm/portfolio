@@ -29,10 +29,10 @@ function Layout(props) {
     <div onPointerMove={trackPointer} onWheel={trackPointer}>
       <header className={classes.header}>
         <Navigation />
-        <Socials />
+        {/* <Socials /> */}
       </header>
       <main className={classes.main}>{props.children}</main>
-      <Blob mouseX={mouseX} mouseY={mouseY} scrollY={scrollY} />
+      {/* <Blob mouseX={mouseX} mouseY={mouseY} scrollY={scrollY} /> */}
       <Modal />
     </div>
   );
