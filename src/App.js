@@ -1,4 +1,5 @@
 import "./App.css";
+// import webDev01 from "./imgs/WebdevArt01.jpg";
 // import Layout from "./components/layout/Layout";
 // import AboutMe from "./components/pages/AboutMe";
 // import ContactMe from "./components/pages/ContactMe";
@@ -9,11 +10,11 @@ function App() {
   return (
     <Layout>
       <Hero>
-        <Navigation/>
-        <AboutMe />
+        <Overlay>
+          <Navigation/>
+          <Home />
+        </Overlay>
       </Hero>
-      
-
     </Layout>
   );
 }
@@ -32,10 +33,10 @@ function Layout(props) {
 function Navigation() {
   return (
     <nav className="nav">
-      <div className="li a">SG</div>
+      <div className="li h2">SG</div>
       <ul className="ul">
         <li className="li">
-          <a className="a" href="#about-me">About Me</a>
+          <a className="a" href="#home">Home</a>
         </li>
         <li className="li">
           <a className="a" href="#my-work">My Work</a>
@@ -60,22 +61,35 @@ function Hero(props) {
   )
 }
 
+// Create overlay for Hero
+function Overlay(props) {
+  return (
+    <div className="overlay">
+      {props.children}
+    </div>
+  )
+}
+
 // Create About Me container
 
-function AboutMe() {
+
+function Home() {
   return (
-    <main className="about-me">
-      <h1 className="h1">Steven Goldberg</h1>
-      <h2 className="h2">Web Developer</h2>
-      <div className="flex-container">
-        <button className="button">
-        Contact Me
-        </button>
-        <button className="button">
-          My Resume
-        </button>
-      </div>
-    </main>
+    <>
+      <main className="home">
+        <h1 className="h1">Steven Goldberg</h1>
+        <h2 className="h2">Web Developer</h2>
+        <div className="flex-container">
+          <button className="button">
+          Contact Me
+          </button>
+          <button className="button">
+            My Resume
+          </button>
+        </div>
+      </main>
+      
+    </>
   )
 }
 
