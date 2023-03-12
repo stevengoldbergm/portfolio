@@ -14,3 +14,29 @@ body {
   height: 100%;
   overflow-y: hidden;
 }
+
+/* ---------------Scrollbar------------------ */
+/* .scrollbar {
+  scrollbar-width: 1rem;
+  scrollbar-color: rgb(195, 165, 205);
+} */
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(195, 165, 205);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(215, 125, 110);
+  border-radius: 1rem;
+  width: 1rem;
+  max-height: 1rem;
+}
+
+::-webkit-scrollbar-button {
+  height: 2vh;
+  background: rgb(195, 165, 205);
+}
