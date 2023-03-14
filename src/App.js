@@ -1,6 +1,18 @@
 import "./App.css";
 import downArrow from "./imgs/downArrow.svg";
 import purpleBackground from "./imgs/purple_background.jpg";
+
+// import swiper 
+import { Navigation, Pagination, Scrollbar } from 'swiper';
+
+import {Swiper, SwiperSlide} from 'swiper/react'
+
+// import swiper styles // use scss later
+import 'swiper/swiper-bundle.css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 // import webDev01 from "./imgs/WebdevArt01.jpg";
 // import Layout from "./components/layout/Layout";
 // import AboutMe from "./components/pages/AboutMe";
@@ -11,9 +23,11 @@ import purpleBackground from "./imgs/purple_background.jpg";
 function App() {
   return (
     <Layout>
+          <Navbar />
+
       <Hero>
         <Overlay>
-          <Navigation />
+          <Navbar />
           <Home />
         </Overlay>
       </Hero>
@@ -33,7 +47,7 @@ function Layout(props) {
 }
 
 // Create a navigation bar
-function Navigation() {
+function Navbar() {
   return (
     <nav className="nav">
       <div className="bold h2">SG</div>
@@ -110,7 +124,7 @@ function ProjectCard(props) {
   return (
     <>
       {projectArray ? (
-        // Add a .map function to pull the project data
+        // Add a .map function to pull the project data? No - this component should only show one data object in props, not an array
         // Will need to set up additional prop drilling to get working right
         <div></div>
       ) : (
@@ -137,6 +151,31 @@ function Carousel(props) {
     <>
       {/* Use a switch to determine which group of values is being generated */}
       {/* Front-End, Back-End, Programs, Portfolio items */}
+
+      {/* test carousel */}
+      <div className="carousel">
+        <Swiper
+        modules={[Navigation, Pagination, Scrollbar]}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          spaceBetween={0}
+          slidesPerView={3.25}
+          loop={true}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide><ProjectCard /></SwiperSlide>
+        </Swiper>
+      </div>
+      
     </>
   );
 }
