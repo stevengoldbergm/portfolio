@@ -2,16 +2,18 @@ import "./App.css";
 import downArrow from "./imgs/downArrow.svg";
 import purpleBackground from "./imgs/purple_background.jpg";
 
-// import swiper 
-import { Navigation, Pagination, Scrollbar } from 'swiper';
+// import swiper
+import { Navigation, Pagination, Scrollbar, grabCursor } from "swiper";
 
-import {Swiper, SwiperSlide} from 'swiper/react'
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // import swiper styles // use scss later
-import 'swiper/swiper-bundle.css'
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+import { useEffect, useState } from "react";
 
 // import webDev01 from "./imgs/WebdevArt01.jpg";
 // import Layout from "./components/layout/Layout";
@@ -23,11 +25,9 @@ import 'swiper/css/scrollbar';
 function App() {
   return (
     <Layout>
-          <Navbar />
-
+      <Navbar />
       <Hero>
         <Overlay>
-          <Navbar />
           <Home />
         </Overlay>
       </Hero>
@@ -43,7 +43,16 @@ function App() {
 // Is this necessary? Probably not - may remove later
 
 function Layout(props) {
-  return <div className="layout">{props.children}</div>;
+  return (
+    <div
+      className="layout"
+      onScroll={() => {
+        console.log("test");
+      }}
+    >
+      {props.children}
+    </div>
+  );
 }
 
 // Create a navigation bar
@@ -114,7 +123,128 @@ function Home() {
 function MyWork(props) {
   return (
     <>
-      <main className="my-work">{props.children}</main>
+      <main className="my-work">
+        <div className="tech-stack-container">
+          {/* Front-end slides */}
+          <div className="tech-stack">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar]}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              spaceBetween={0}
+              slidesPerView={3.25}
+              loop={true}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <div className="tech-stack">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar]}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              spaceBetween={0}
+              slidesPerView={3.25}
+              loop={true}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProjectCard />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+
+          <div className="tech-stack">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar ]}
+              navigation
+              pagination={{ clickable: true }}
+              Scrollbar={{ draggable: true }}
+              grabCursor={true}
+              spaceBetween={0}
+              slidesPerView={3.5}
+              slidesPerGroup={2}
+              loop={true}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://picsum.photos/200" alt="test" height={'100%'} width={'75%'} />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </main>
     </>
   );
 }
@@ -155,27 +285,42 @@ function Carousel(props) {
       {/* test carousel */}
       <div className="carousel">
         <Swiper
-        modules={[Navigation, Pagination, Scrollbar]}
+          modules={[Navigation, Pagination, Scrollbar]}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           spaceBetween={0}
           slidesPerView={3.25}
           loop={true}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide><ProjectCard /></SwiperSlide>
-          <SwiperSlide><ProjectCard /></SwiperSlide>
-          <SwiperSlide><ProjectCard /></SwiperSlide>
-          <SwiperSlide><ProjectCard /></SwiperSlide>
-          <SwiperSlide><ProjectCard /></SwiperSlide>
-          <SwiperSlide><ProjectCard /></SwiperSlide>
-          <SwiperSlide><ProjectCard /></SwiperSlide>
-          <SwiperSlide><ProjectCard /></SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectCard />
+          </SwiperSlide>
         </Swiper>
       </div>
-      
     </>
   );
 }
