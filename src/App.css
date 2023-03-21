@@ -62,7 +62,7 @@
 
 .hero {
   height: 100vh;
-  background-image: url(./imgs/WebdevArt01.jpg);
+  background-image: url(./assets/imgs/WebdevArt01.jpg);
   /* background: linear-gradient(.6turn, rgb(108, 38, 108), rgb(219, 205, 166)); */
   background-size: 75%;
   background-position-x: right;
@@ -188,6 +188,12 @@
 
 .tech-stack {
   width: 30%;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
