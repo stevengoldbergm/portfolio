@@ -579,6 +579,7 @@ button.swiper-pagination-bullet {
     --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
     --swiper-scrollbar-size: 4px;
   */
+  --swiper-pagination-bottom: 0;
   /*
     --swiper-pagination-color: var(--swiper-theme-color);
     --swiper-pagination-left: auto;
