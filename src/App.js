@@ -13,7 +13,7 @@ import "./assets/css/custom.min.css";
 
 // Import FontAwesomeIcon components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight, faArrowTurnDown, faArrowTurnUp } from "@fortawesome/free-solid-svg-icons";
 
 // Import frontEnd, backEnd, programs and projects to generate swipers
 import frontEnd from "./assets/data/frontEnd";
@@ -154,7 +154,12 @@ function SwiperNavButtons(props) {
       >
         <FontAwesomeIcon icon={faArrowLeft} size={props.size} />
       </button>
-      <button className="btn" onClick={() => swiper.slideNext()}>
+      <button
+        className="btn"
+        onClick={() => {
+          swiper.slideNext();
+        }}
+      >
         <FontAwesomeIcon icon={faArrowRight} size={props.size} />
       </button>
     </div>
@@ -197,7 +202,7 @@ function TechSwiper({ tech }) {
             </SwiperSlide>
           );
         })}
-    <SwiperNavButtons size="lg" />
+      <SwiperNavButtons size="lg" />
     </Swiper>
   );
 }
@@ -232,6 +237,20 @@ function MyWork() {
             </div>
           </div>
         </div>
+        <div className="tech-stack-row">
+          <div className="tech-stack-row center">
+            <FontAwesomeIcon className="move-up" icon={faArrowTurnUp} />
+            <p> My Tech Stack </p>
+            <FontAwesomeIcon className="move-up flip-up" icon={faArrowTurnUp} />
+          </div>
+          <div className="tech-stack-row center">
+            <FontAwesomeIcon className="move-down flip-down" icon={faArrowTurnDown} />
+            <p> My Recent projects</p>
+            <FontAwesomeIcon className="move-down" icon={faArrowTurnDown} />
+          </div>
+          
+        </div>
+        
         <Carousel />
       </main>
     </>
@@ -246,13 +265,16 @@ function ProjectCard({ project }) {
       {project && (
         <div className="card-container">
           <img className="card-banner" src={project.img} alt={project.title} />
-          <main className="card-content">
+          <Overlay />
+            <main className="card-content">
             <header className="card-header">{project.title}</header>
             <p className="card-body">{project.text}</p>
             <footer className="card-footer">{project.tech}</footer>
             <a href={project.liveApp}>liveApp</a>
             <a href={project.gitRepo}>gitRepo</a>
           </main>
+
+          
         </div>
       )}
     </>
@@ -272,17 +294,19 @@ function Carousel() {
           }}
           // spaceBetween={0}
           slidesPerView={4}
-          slidesPerGroup={1}
+          slidesPerGroup={2}
           // initialSlide={projects.length}
           autoplay={{ delay: 2000 }}
           grabCursor={true}
-          // loop={true}
+          rewind={true}
         >
           {projects.map((project) => {
             return (
-              <SwiperSlide key={project.id}>
-                <ProjectCard project={project} />
-              </SwiperSlide>
+              <Overlay>
+                <SwiperSlide key={project.id}>
+                  <ProjectCard project={project} />
+                </SwiperSlide>{" "}
+              </Overlay>
             );
           })}
           <SwiperNavButtons size="3x" />
