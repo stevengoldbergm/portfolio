@@ -1,5 +1,4 @@
 import "./App.css";
-import downArrow from "./assets/imgs/downArrow.svg";
 
 // import swiper, swiper modules, and swiper components for react
 import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
@@ -13,7 +12,14 @@ import "./assets/css/custom.min.css";
 
 // Import FontAwesomeIcon components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight, faArrowTurnDown, faArrowTurnUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faArrowTurnDown,
+  faArrowTurnUp,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 
 // Import frontEnd, backEnd, programs and projects to generate swipers
 import frontEnd from "./assets/data/frontEnd";
@@ -21,28 +27,77 @@ import backEnd from "./assets/data/backEnd";
 import programs from "./assets/data/programs";
 import projects from "./assets/data/projects";
 
-// import { useEffect, useState } from "react";
+// Import images and other files
+import downArrow from "./assets/imgs/downArrow.svg";
+import headshot from "./assets/imgs/headshot.png";
+import webDev01 from "./assets/imgs/WebdevArt01.jpg";
+import resume from "./assets/files/WebDeveloperResume_2023.pdf";
 
-// import webDev01 from "./assets/imgs/WebdevArt01.jpg";
-// import Layout from "./components/layout/Layout";
-// import AboutMe from "./components/pages/AboutMe";
-// import ContactMe from "./components/pages/ContactMe";
-// import MyWork from "./components/pages/MyWork";
-// import TechStack from "./components/pages/TechStack";
+
+import { useEffect, useState } from "react";
+
 
 function App() {
+  // Set up State for navbar visibility 
+  const [isVisible, setIsVisible] = useState(true);
+  
+  // Set state to check Y position of page
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+
+  // set up useEffect to track navbar
+  useEffect(() => {
+    const navbar = document.querySelector('.nav');
+    console.log(navbar)
+    if (isVisible) {
+      // navbar.style.top = '1rem';
+      navbar.style.height = '4rem';
+    } else {
+      // navbar.style.top = '-3rem';
+      navbar.style.height = '3rem';
+    }
+  }, [isVisible, prevScrollPos])
+
+  // on scroll, update the Y position
+  window.onscroll = () => {
+    // Set current scroll position
+    const currentScrollPos = window.scrollY;
+    console.log('scrolling');
+    console.log('previous', prevScrollPos)
+    console.log('current', currentScrollPos);
+
+      if ( currentScrollPos > 0) {
+        console.log('hide nav');
+        setPrevScrollPos(currentScrollPos); 
+        setIsVisible(false);
+      } else {
+        console.log('reveal nav');
+        setPrevScrollPos(currentScrollPos); 
+        setIsVisible(true);
+      }
+  }
+
+  // write function to hide/reveal nav
+  
+
   return (
     <Layout>
       <Navbar />
+      {/* Home page */}
       <Hero>
-        <Overlay>
-          <Home />
-        </Overlay>
+        <Overlay />
+        <Home />
       </Hero>
+
+      {/* Tech Stack page */}
       <MyWork>
         <ProjectCard />
         <Carousel />
       </MyWork>
+
+      {/* AboutMe Page */}
+      <AboutMe>
+        <Summary />
+      </AboutMe>
     </Layout>
   );
 }
@@ -52,12 +107,7 @@ function App() {
 
 function Layout(props) {
   return (
-    <div
-      className="layout"
-      onScroll={() => {
-        console.log("test");
-      }}
-    >
+    <div className="layout">
       {props.children}
     </div>
   );
@@ -75,13 +125,13 @@ function Navbar() {
           </a>
         </li>
         <li className="li">
-          <a className="a" href="#my-work">
-            My Work
+          <a className="a" href="#tech-stack">
+            Tech Stack
           </a>
         </li>
         <li className="li">
-          <a className="a" href="#tech-stack">
-            Tech Stack
+          <a className="a" href="#about-me">
+            About Me
           </a>
         </li>
         <li className="li">
@@ -96,7 +146,11 @@ function Navbar() {
 
 // Create HERO component for first page
 function Hero(props) {
-  return <div className="hero">{props.children}</div>;
+  return (
+    <div id="home" className="hero">
+      {props.children}
+    </div>
+  );
 }
 
 // Create overlay for Hero
@@ -114,7 +168,11 @@ function Home() {
         <h2 className="h2">Web Developer</h2>
         <div className="flex-container">
           <button className="button">Contact Me</button>
-          <button className="button">My Resume</button>
+          <button className="button">
+            <a href={resume} download="StevenGoldbergResume_2023.pdf">
+              My Resume
+            </a>
+          </button>
         </div>
         <div className="down-arrow">
           <a href="#tech-stack">
@@ -211,7 +269,7 @@ function TechSwiper({ tech }) {
 function MyWork() {
   return (
     <>
-      <main className="my-work">
+      <main id="tech-stack" className="my-work">
         <div className="tech-stack-container">
           {/* Front-end slides */}
           <div className="tech-stack-column">
@@ -244,13 +302,15 @@ function MyWork() {
             <FontAwesomeIcon className="move-up flip-up" icon={faArrowTurnUp} />
           </div>
           <div className="tech-stack-row center">
-            <FontAwesomeIcon className="move-down flip-down" icon={faArrowTurnDown} />
+            <FontAwesomeIcon
+              className="move-down flip-down"
+              icon={faArrowTurnDown}
+            />
             <p> My Recent projects</p>
             <FontAwesomeIcon className="move-down" icon={faArrowTurnDown} />
           </div>
-          
         </div>
-        
+
         <Carousel />
       </main>
     </>
@@ -265,16 +325,27 @@ function ProjectCard({ project }) {
       {project && (
         <div className="card-container">
           <img className="card-banner" src={project.img} alt={project.title} />
-          <Overlay />
-            <main className="card-content">
-            <header className="card-header">{project.title}</header>
+          {/* <Overlay /> */}
+          <main className="card-content">
+            <header className="card-header">
+              {project.title}
+              <div className="card-button-container">
+                <button className="card-button">
+                  <a href={project.liveApp} title="Live Site">
+                    <FontAwesomeIcon icon={faWindowMaximize} />
+                  </a>
+                </button>
+                <button className="card-button">
+                  <a href={project.gitRepo} title="GitHub Repo">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </button>
+              </div>
+            </header>
             <p className="card-body">{project.text}</p>
             <footer className="card-footer">{project.tech}</footer>
-            <a href={project.liveApp}>liveApp</a>
-            <a href={project.gitRepo}>gitRepo</a>
           </main>
-
-          
+          {/* <Overlay /> */}
         </div>
       )}
     </>
@@ -298,11 +369,11 @@ function Carousel() {
           // initialSlide={projects.length}
           autoplay={{ delay: 2000 }}
           grabCursor={true}
-          rewind={true}
+          // rewind={true}
         >
           {projects.map((project) => {
             return (
-              <Overlay>
+              <Overlay key={project.id}>
                 <SwiperSlide key={project.id}>
                   <ProjectCard project={project} />
                 </SwiperSlide>{" "}
@@ -315,7 +386,54 @@ function Carousel() {
     </>
   );
 }
-// Three little carousels are ncessary for the tech stack
-// One big carousel is necessary for the app list
+
+// Create an About Me page
+function AboutMe(props) {
+  return (
+    <div id="about-me" className="about-me">
+      {props.children}
+    </div>
+  );
+}
+
+// Create a component for your picture and summary
+function Summary(props) {
+  return (
+    <div className="am-row">
+      <img src={headshot} alt="headshot" />
+      <div className="am-column">
+        <h2>Hi - I'm Steve!</h2>
+        <p>
+          And I'm a certified full-stack web-developer.
+          <br />
+          <br />
+          I have a bachelor's degree in psychology and nearly a decade's worth
+          of experience leading teams and projects in imaging operations for
+          financial institutions. I'm passionate about continuing to learn and
+          improve myself, and I love helping others. When I'm not working, I
+          like to read fantasy novels and run TTRPGs for my friends.
+          <br />
+          <br />
+          If you're looking for a developer with great communication skills, a
+          growth mindset, and a strong work ethic, contact me below!
+        </p>
+        <div className="down-arrow">
+          <a href="#contact">
+            <img
+              className="arrow"
+              src={downArrow}
+              alt="A downward facing arrow"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Create a Contact Me page
+
+// Create component for form submission
+// Use this with the modal
 
 export default App;
