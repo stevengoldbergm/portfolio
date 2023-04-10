@@ -504,7 +504,7 @@ function ContactForm(props) {
     );
 
     // Clear the payload
-    fnInputRef.current.value = 'clear';
+    fnInputRef.current.value = '';
     lnInputRef.current.value = '';
     emlInputRef.current.value = '';
     txtInputRef.current.value = '';
