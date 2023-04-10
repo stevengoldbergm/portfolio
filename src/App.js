@@ -33,51 +33,48 @@ import headshot from "./assets/imgs/headshot.png";
 import webDev01 from "./assets/imgs/WebdevArt01.jpg";
 import resume from "./assets/files/WebDeveloperResume_2023.pdf";
 
-
-import { useEffect, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
 
 function App() {
-  // Set up State for navbar visibility 
+  // Set up State for navbar visibility
   const [isVisible, setIsVisible] = useState(true);
-  
+
   // Set state to check Y position of page
-  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   // set up useEffect to track navbar
   useEffect(() => {
-    const navbar = document.querySelector('.nav');
-    console.log(navbar)
+    const navbar = document.querySelector(".nav");
+    console.log(navbar);
     if (isVisible) {
       // navbar.style.top = '1rem';
-      navbar.style.height = '4rem';
+      navbar.style.height = "4rem";
     } else {
       // navbar.style.top = '-3rem';
-      navbar.style.height = '3rem';
+      navbar.style.height = "3rem";
     }
-  }, [isVisible, prevScrollPos])
+  }, [isVisible, prevScrollPos]);
 
   // on scroll, update the Y position
   window.onscroll = () => {
     // Set current scroll position
     const currentScrollPos = window.scrollY;
-    console.log('scrolling');
-    console.log('previous', prevScrollPos)
-    console.log('current', currentScrollPos);
+    console.log("scrolling");
+    console.log("previous", prevScrollPos);
+    console.log("current", currentScrollPos);
 
-      if ( currentScrollPos > 0) {
-        console.log('hide nav');
-        setPrevScrollPos(currentScrollPos); 
-        setIsVisible(false);
-      } else {
-        console.log('reveal nav');
-        setPrevScrollPos(currentScrollPos); 
-        setIsVisible(true);
-      }
-  }
+    if (currentScrollPos > 0) {
+      console.log("hide nav");
+      setPrevScrollPos(currentScrollPos);
+      setIsVisible(false);
+    } else {
+      console.log("reveal nav");
+      setPrevScrollPos(currentScrollPos);
+      setIsVisible(true);
+    }
+  };
 
   // write function to hide/reveal nav
-  
 
   return (
     <Layout>
@@ -98,6 +95,11 @@ function App() {
       <AboutMe>
         <Summary />
       </AboutMe>
+
+      {/* Contact Page */}
+      <Contact>
+        <ContactForm />
+      </Contact>
     </Layout>
   );
 }
@@ -106,11 +108,7 @@ function App() {
 // Is this necessary? Probably not - may remove later
 
 function Layout(props) {
-  return (
-    <div className="layout">
-      {props.children}
-    </div>
-  );
+  return <div className="layout">{props.children}</div>;
 }
 
 // Create a navigation bar
@@ -399,41 +397,177 @@ function AboutMe(props) {
 // Create a component for your picture and summary
 function Summary(props) {
   return (
-    <div className="am-row">
-      <img src={headshot} alt="headshot" />
-      <div className="am-column">
-        <h2>Hi - I'm Steve!</h2>
-        <p>
-          And I'm a certified full-stack web-developer.
-          <br />
-          <br />
-          I have a bachelor's degree in psychology and nearly a decade's worth
-          of experience leading teams and projects in imaging operations for
-          financial institutions. I'm passionate about continuing to learn and
-          improve myself, and I love helping others. When I'm not working, I
-          like to read fantasy novels and run TTRPGs for my friends.
-          <br />
-          <br />
-          If you're looking for a developer with great communication skills, a
-          growth mindset, and a strong work ethic, contact me below!
-        </p>
-        <div className="down-arrow">
-          <a href="#contact">
-            <img
-              className="arrow"
-              src={downArrow}
-              alt="A downward facing arrow"
-            />
-          </a>
+    <>
+      <div className="am-row">
+        <div className="am-column">
+          <h1>About Me</h1>
+          <p className="text-shadow">About Me</p>
+          <img src={headshot} alt="headshot" />
+        </div>
+
+        <div className="am-column">
+          <h2>Hi - I'm Steve!</h2>
+          <p>
+            And I'm a certified full-stack web-developer.
+            <br />
+            <br />
+            I have a bachelor's degree in psychology and nearly a decade's worth
+            of experience leading teams and projects in imaging operations for
+            financial institutions. I'm passionate about continuing to learn and
+            improve myself, and I love helping others. When I'm not working, I
+            like to read fantasy novels and run TTRPGs for my friends.
+            <br />
+            <br />
+            If you're looking for a developer with great communication skills, a
+            growth mindset, and a strong work ethic, contact me below!
+          </p>
+
+          <div className="down-arrow">
+            <a href="#contact-me">
+              <img
+                className="arrow"
+                src={downArrow}
+                alt="A downward facing arrow"
+              />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
 // Create a Contact Me page
+function Contact(props) {
+  return (
+    <div id="contact-me" className="contact">
+      {props.children}
+    </div>
+  );
+}
 
-// Create component for form submission
+// Create component form for contact submission
 // Use this with the modal
+function ContactForm(props) {
+  // useRef to make easy forms. Could useState, but it's more work.
+  const fnInputRef = useRef();
+  const lnInputRef = useRef();
+  const emlInputRef = useRef();
+  const txtInputRef = useRef();
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const enteredFirstName = fnInputRef.current.value;
+    const enteredLastName = lnInputRef.current.value;
+    const enteredEmail = emlInputRef.current.value;
+    const enteredText = txtInputRef.current.value;
+
+    // Find the current time
+    const utcDate = Date.now();
+    const plainDate = new Date(utcDate).toLocaleString("en-US", {
+      hour12: false,
+    });
+    console.log(utcDate);
+    console.log(plainDate);
+    console.log(
+      enteredFirstName,
+      enteredLastName,
+      enteredEmail,
+      enteredText,
+      utcDate,
+      plainDate
+    );
+
+    // Set up the payload for the message
+    const payload = {
+      name: `${enteredFirstName} ${enteredLastName}`,
+      email: enteredEmail,
+      comments: enteredText,
+      date: plainDate,
+      utcDate,
+    };
+
+    submitData(payload);
+  }
+
+  function submitData(contactData) {
+    // send HTTP fetch request to post data on firebase server
+    fetch(
+      "https://portfolio-contact-193c3-default-rtdb.firebaseio.com/contacts.json",
+      {
+        method: "POST",
+        body: JSON.stringify(contactData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    // Clear the payload
+    fnInputRef.current.value = 'clear';
+    lnInputRef.current.value = '';
+    emlInputRef.current.value = '';
+    txtInputRef.current.value = '';
+  }
+
+  return (
+    <>
+      <form autoComplete="off">
+        {/* Top row for first name/ last name */}
+        <div className="form-row">
+          {/* first name */}
+          <label htmlFor="inputFirstName" className="form-label">
+            First Name:
+          </label>
+          <input
+            required
+            type="text"
+            id="inputFirstName"
+            ref={fnInputRef}
+            aria-label="First Name"
+            placeholder="First Name"
+          />
+          {/* Last name */}
+          <label htmlFor="inputLastName" className="form-label">
+            Last Name:
+          </label>
+          <input
+            required
+            type="text"
+            id="inputLastName"
+            ref={lnInputRef}
+            aria-label="Last Name"
+            placeholder="Last Name"
+          />
+        </div>
+        {/* Email */}
+        <label htmlFor="inputEmail" className="form-label">
+          E-mail:
+        </label>
+        <input
+          required
+          type="text"
+          id="inputEmail"
+          ref={emlInputRef}
+          aria-label="E-mail"
+          placeholder="E-mail"
+        />
+        {/* Message Text */}
+        <label htmlFor="inputText" className="form-label">
+          Message Text:
+        </label>
+        <textarea
+          required
+          type="text"
+          id="inputText"
+          ref={txtInputRef}
+          aria-label="Message Text"
+          placeholder="Message Text"
+        />
+        <button onClick={handleFormSubmit}>Click Me</button>
+      </form>
+    </>
+  );
+}
 
 export default App;
