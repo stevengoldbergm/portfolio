@@ -30,7 +30,7 @@ import projects from "./assets/data/projects";
 // Import images and other files
 import downArrow from "./assets/imgs/downArrow.svg";
 import headshot from "./assets/imgs/headshot.png";
-import webDev01 from "./assets/imgs/WebdevArt01.jpg";
+import webDev02 from "./assets/imgs/WebdevArt02.png";
 import resume from "./assets/files/WebDeveloperResume_2023.pdf";
 
 import { useEffect, useRef, useState } from "react";
@@ -74,8 +74,6 @@ function App() {
     }
   };
 
-  // write function to hide/reveal nav
-
   return (
     <Layout>
       <Navbar />
@@ -98,7 +96,7 @@ function App() {
 
       {/* Contact Page */}
       <Contact>
-        <ContactForm />
+        <ContactSection />
       </Contact>
     </Layout>
   );
@@ -504,68 +502,114 @@ function ContactForm(props) {
     );
 
     // Clear the payload
-    fnInputRef.current.value = '';
-    lnInputRef.current.value = '';
-    emlInputRef.current.value = '';
-    txtInputRef.current.value = '';
+    fnInputRef.current.value = "";
+    lnInputRef.current.value = "";
+    emlInputRef.current.value = "";
+    txtInputRef.current.value = "";
   }
 
   return (
     <>
-      <form autoComplete="off">
-        {/* Top row for first name/ last name */}
-        <div className="form-row">
-          {/* first name */}
-          <label htmlFor="inputFirstName" className="form-label">
-            First Name:
+      <div className="form-container">
+        <form className="contact-form" noValidate="false">
+          {/* Top row for first name/ last name */}
+          <div className="form-row">
+            <div className="form-row-container">
+              {/* first name */}
+              <label className="form-label" htmlFor="inputFirstName">
+                First Name:
+              </label>
+              <input
+                className="form-input"
+                required
+                type="text"
+                id="inputFirstName"
+                ref={fnInputRef}
+                aria-label="First Name"
+                placeholder="John"
+              />
+            </div>
+            {/* Last name */}
+            <div className="form-row-container">
+              <label className="form-label" htmlFor="inputLastName">
+                Last Name:
+              </label>
+              <input
+                className="form-input"
+                required
+                type="text"
+                id="inputLastName"
+                ref={lnInputRef}
+                aria-label="Last Name"
+                placeholder="Doe"
+              />
+            </div>
+          </div>
+          {/* Email */}
+          <div className="form-row-container">
+            <label className="form-label" htmlFor="inputEmail">
+              E-mail:
+            </label>
+            <input
+              className="form-input"
+              required
+              type="text"
+              id="inputEmail"
+              ref={emlInputRef}
+              aria-label="E-mail"
+              placeholder="notadeer@example.com"
+            />
+          </div>
+          {/* Message Text */}
+          <label htmlFor="inputText" className="form-label">
+            Comments:
           </label>
-          <input
+          <textarea
             required
             type="text"
-            id="inputFirstName"
-            ref={fnInputRef}
-            aria-label="First Name"
-            placeholder="First Name"
+            id="inputText"
+            ref={txtInputRef}
+            aria-label="Message Text"
+            placeholder="Any comments or inquiries go here!"
           />
-          {/* Last name */}
-          <label htmlFor="inputLastName" className="form-label">
-            Last Name:
-          </label>
-          <input
-            required
-            type="text"
-            id="inputLastName"
-            ref={lnInputRef}
-            aria-label="Last Name"
-            placeholder="Last Name"
-          />
+          <button
+            className="button center"
+            type="submit"
+            onClick={handleFormSubmit}
+          >
+            Send me a message!
+          </button>
+        </form>
+      </div>
+    </>
+  );
+}
+
+function ContactSection(props) {
+  return (
+    <>
+      <div className="cs-row">
+        <div className="cs-column">
+          {/* Put text here for the contact form */}
+          <h1>Questions? Comments?</h1>
+          <br />
+          <p>
+            Feel free to{" "}
+            <a className="e-mail" href="mailto:stevengoldbergm@gmail.com">e-mail me ✉</a>
+            <br />
+            Or send me a message and I'll get back to you!
+          </p>
+          <ContactForm />
         </div>
-        {/* Email */}
-        <label htmlFor="inputEmail" className="form-label">
-          E-mail:
-        </label>
-        <input
-          required
-          type="text"
-          id="inputEmail"
-          ref={emlInputRef}
-          aria-label="E-mail"
-          placeholder="E-mail"
-        />
-        {/* Message Text */}
-        <label htmlFor="inputText" className="form-label">
-          Message Text:
-        </label>
-        <textarea
-          required
-          type="text"
-          id="inputText"
-          ref={txtInputRef}
-          aria-label="Message Text"
-          placeholder="Message Text"
-        />
-        <button onClick={handleFormSubmit}>Click Me</button>
-      </form>
+        <div className="cs-column">
+          <img
+            alt="Illustration of two people using laptops"
+            src={webDev02}
+          />
+          <div className="img-overlay" />
+        </div>
+        
+      </div>
     </>
   );
 }
