@@ -63,7 +63,7 @@ function App() {
     console.log("previous", prevScrollPos);
     console.log("current", currentScrollPos);
 
-    if (currentScrollPos > 0) {
+    if (currentScrollPos > 75) {
       console.log("hide nav");
       setPrevScrollPos(currentScrollPos);
       setIsVisible(false);
@@ -511,7 +511,7 @@ function ContactForm(props) {
   return (
     <>
       <div className="form-container">
-        <form className="contact-form" noValidate="false">
+        <form className="contact-form">
           {/* Top row for first name/ last name */}
           <div className="form-row">
             <div className="form-row-container">
@@ -527,6 +527,7 @@ function ContactForm(props) {
                 ref={fnInputRef}
                 aria-label="First Name"
                 placeholder="John"
+                // autoComplete="nope"
               />
             </div>
             {/* Last name */}
@@ -542,6 +543,7 @@ function ContactForm(props) {
                 ref={lnInputRef}
                 aria-label="Last Name"
                 placeholder="Doe"
+                // autoComplete="nope"
               />
             </div>
           </div>
@@ -558,6 +560,7 @@ function ContactForm(props) {
               ref={emlInputRef}
               aria-label="E-mail"
               placeholder="notadeer@example.com"
+              // autoComplete="nope"
             />
           </div>
           {/* Message Text */}
@@ -595,20 +598,18 @@ function ContactSection(props) {
           <br />
           <p>
             Feel free to{" "}
-            <a className="e-mail" href="mailto:stevengoldbergm@gmail.com">e-mail me ✉</a>
+            <a className="e-mail" href="mailto:stevengoldbergm@gmail.com">
+              e-mail me ✉
+            </a>
             <br />
             Or send me a message and I'll get back to you!
           </p>
           <ContactForm />
         </div>
         <div className="cs-column">
-          <img
-            alt="Illustration of two people using laptops"
-            src={webDev02}
-          />
+          <img alt="Illustration of two people using laptops" src={webDev02} />
           <div className="img-overlay" />
         </div>
-        
       </div>
     </>
   );
