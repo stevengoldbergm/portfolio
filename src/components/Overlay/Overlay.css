@@ -1,0 +1,11 @@
+.overlay {
+  padding-top: 3.25rem;
+  position: absolute;
+  background: linear-gradient(
+    rgba(108, 38, 108, 0.275),
+    rgba(219, 205, 166, 0.275)
+  );
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
