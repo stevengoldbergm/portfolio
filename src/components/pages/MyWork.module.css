@@ -1,7 +1,0 @@
-.gridContainer {
-  display: grid;
-  /*  Figure out how to do special rows */
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 2fr 1fr;
-  gap: 1rem;
-}
