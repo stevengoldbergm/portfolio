@@ -1,0 +1,9 @@
+.hero {
+  height: 100vh;
+  background-image: url(../../assets/imgs/WebdevArt01.jpg);
+  background-size: 75%;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: 72.5%;
+}
