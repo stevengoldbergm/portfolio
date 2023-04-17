@@ -1,0 +1,20 @@
+/* Socials */
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials > a {
+  color: var(--secondary-dark);
+  font-size: 1.5rem;
+  text-align: center;
+  transition: 300ms ease-in-out;
+}
+
+.socials > a:hover {
+  color: var(--secondary);
+}
+
+.socials > a {
+  margin-inline: .5rem;
+}
