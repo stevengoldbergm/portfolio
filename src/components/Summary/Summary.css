@@ -1,0 +1,56 @@
+
+.am-column > h1 {
+  position: relative;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  margin-inline: 2rem;
+  color: var(--primary);
+  z-index: 3;
+}
+
+.text-shadow {
+  position: absolute;
+  top: -.3rem;
+  left: -.3rem;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-inline: 2rem;
+  color: var(--secondary);
+  z-index: 0;
+  filter: blur(.05rem);
+}
+
+.am-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.am-column {
+  position: relative;
+  margin-inline: 2rem;
+}
+
+.am-column > img {
+  max-height: 25rem;
+  aspect-ratio: 1/1;
+  border-radius: 2.5rem;
+  margin-inline: 3rem;
+  box-shadow: 
+  -1rem -1rem .05rem 0 var(--primary),
+  -2rem -2rem .1rem 0 var(--secondary);
+  /* mix-blend-mode: multiply; */
+}
+
+.am-column > h2 {
+  padding-top: 6rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.am-column > p {
+  max-width: 25em;
+}
