@@ -1,0 +1,113 @@
+/* Navburger */
+
+:root {
+  /* NOTE: Bar Width is cool in concept, but using x-width provides better scalability, as the element width is no longer variable */
+  /* --bar-width: 1rem; */
+--bar-height: .3rem;
+--navburger-gap: .25rem;
+--foreground: black;
+--background: white;
+--navburger-height: calc(3 * var(--bar-height) + 2 * var(--navburger-gap));
+--x-width: calc(var(--navburger-height) * 1.41421356237);
+--x-width-offset: calc(var(--x-width) - var(--navburger-height));
+}
+
+.navburger {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: var(--navburger-gap);
+width: max-content;
+z-index: 2;
+cursor: pointer;
+}
+
+.navburger::before,
+.navburger::after,
+.navburger input {
+content: "";
+width: var(--x-width);
+height: var(--bar-height);
+transform: scaleX(1);
+background-color: var(--primary);
+border-radius: 1rem;
+transition: 
+opacity var(--animation-timing),
+transform var(--animation-timing),
+translate var(--animation-timing),
+width var(--animation-timing),
+rotate var(--animation-timing);
+transform-origin: center;
+}
+
+.navburger:has(input:checked)::before {
+rotate: 45deg;
+width: var(--x-width);
+translate: calc(var(--x-width-offset)/2) calc(var(--bar-height) / -2);
+}
+
+.navburger:has(input:checked)::after {
+rotate: -45deg;
+width: var(--x-width);
+translate: calc(var(--x-width-offset)/2) calc(var(--bar-height) / 2);
+}
+
+.navburger::before,
+.navburger::after {
+transform-origin: left center;
+}
+
+.navburger input {
+appearance: none;
+outline: none;
+pointer-events: none;
+}
+
+.navburger input:checked {
+/* background: red; */
+opacity: 0;
+transform: scaleX(0);
+}
+
+.navburger:has(input:checked) + .menu {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 784px) {
+  .navburger {
+    display: none;
+  }
+}
+
+/* Navburger Menu */
+
+.menu {
+  position: absolute;
+  height: 110vh;
+  width: 100vw;
+  background: rgba(42, 33, 5, 0.9);
+  top: -2rem;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform var(--animation-timing);
+  padding-inline: 3rem;
+  padding-top: 6rem;
+  z-index: -1;
+}
+
+.navburger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navburger-menu > .a {
+  width: fit-content;
+  margin-block: 1rem;
+  font-weight: bold;
+  font-size: 3rem;
+  color: White;
+  border-radius: .2rem;
+  padding-inline: .5rem;
+}
