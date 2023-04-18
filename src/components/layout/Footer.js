@@ -1,7 +1,12 @@
-
+// Import FA icons and components
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// Import other components
 import Socials from "./Socials";
+
+// Import css
+import "./Footer.css"
 
 // Make a footer
 function Footer() {
