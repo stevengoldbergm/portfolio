@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperNavButtons from "../SwiperNavButtons/SwiperNavButtons";
 import Badge from "../Badge/Badge";
 
+// Import css
+import "./TechSwiper.css"
 
 // Create Tech Swiper
 function TechSwiper({ tech }) {
@@ -20,7 +22,7 @@ function TechSwiper({ tech }) {
       shortSwipes={false}
       autoplay={{ delay: 2000, reverseDirection: true }}
       grabCursor={true}
-      spaceBetween={1}
+      spaceBetween={0}
       slidesPerView={3}
       slidesPerGroup={2}
       // initialSlide={length}
