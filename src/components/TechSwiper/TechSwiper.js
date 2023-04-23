@@ -27,6 +27,33 @@ function TechSwiper({ tech }) {
       slidesPerGroup={2}
       // initialSlide={length}
       loop={true}
+      breakpoints= {{
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 4,
+        },
+        // when window width is >= 640px
+        680: {
+          slidesPerView: 4,
+
+        },
+        // when window width is >= 640px
+        784: {
+          slidesPerView: 2.5,
+        },
+        // when window width is >= 640px
+        1080: {
+          slidesPerView: 3,
+        },
+        // when window width is >= 640px
+        1280: {
+          slidesPerView: 3.5,
+        },
+        // when window width is >= 640px
+        1380: {
+          slidesPerView: 4,
+        }
+      }}
     >
       {/* Map through data to make badges */}
       {tech &&
