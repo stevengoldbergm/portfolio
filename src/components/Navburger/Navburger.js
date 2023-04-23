@@ -1,10 +1,14 @@
 // Import css
 import "./Navburger.css";
-function Navburger() {
-  const burgerCheck = document.querySelector(".navburger > input");
-  // console.log(burgerCheck.checked); working
+
+function Navburger({burgerCheck}) {
+  
 
   function handleBurger() {
+    // Find borgr
+    const burgerCheck = document.querySelector(".navburger > input");
+    // console.log(burgerCheck.checked); // working
+
     // If you click the link, the burger becomes unchecked
     if (burgerCheck.checked === true) {
       burgerCheck.checked = false;

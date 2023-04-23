@@ -2,7 +2,7 @@
 import Navburger from "../Navburger/Navburger";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ burger }) {
   return (
     <div className="nav">
       <div className="nav-row">
@@ -30,7 +30,6 @@ function Navbar() {
           </li>
         </ul>
         <Navburger />
-
       </div>
       {/* Expanded nav for mobile */}
     </div>
