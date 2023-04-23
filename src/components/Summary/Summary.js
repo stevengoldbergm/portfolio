@@ -10,8 +10,10 @@ function Summary(props) {
     <>
       <div className="am-row">
         <div className="am-column">
-          <h1>About Me</h1>
+          <h1>
+            About Me
           <p className="text-shadow">About Me</p>
+          </h1>
           <img src={headshot} alt="headshot" />
         </div>
 

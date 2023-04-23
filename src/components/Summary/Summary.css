@@ -1,38 +1,98 @@
+.am-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.am-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-inline: 2rem;
+}
 
 .am-column > h1 {
   position: relative;
-  font-size: 5rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
-  margin-inline: 2rem;
+  margin-inline: 1rem;
   color: var(--primary);
   z-index: 3;
 }
 
 .text-shadow {
   position: absolute;
-  top: -.3rem;
-  left: -.3rem;
-  font-size: 5rem;
+  top: -.1rem;
+  left: -1.2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  margin-inline: 2rem;
+  margin-inline: 1rem;
   color: var(--secondary);
-  z-index: 0;
+  z-index: -1;
   filter: blur(.05rem);
-}
-
-.am-row {
   width: 100%;
+}
+
+.am-column > img {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 100%;
+  border-radius: 2.5rem;
+  box-shadow: 
+  -1rem -1rem .05rem 0 var(--primary),
+  -2rem -2rem .1rem 0 var(--secondary);
+  margin-left: 2rem;
 }
 
-
-.am-column {
-  position: relative;
-  margin-inline: 2rem;
+.am-column > h2 {
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+  color: var(--primary);
 }
+
+.am-column > p {
+  max-width: 25em;
+}
+
+@media screen and (min-width: 65em) {
+  .am-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+   
+  .am-column {
+    position: relative;
+    margin-inline: 2rem;
+  }
+
+  .am-column > h1 {
+    position: relative;
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    margin-inline: 2rem;
+    color: var(--primary);
+    z-index: 3;
+  }
+  
+  .text-shadow {
+    position: absolute;
+    top: -0.3rem;
+    left: -2.25rem;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-inline: 2rem;
+    color: var(--secondary);
+    filter: blur(.05rem);
+  }
 
 .am-column > img {
   max-height: 25rem;
@@ -53,4 +113,6 @@
 
 .am-column > p {
   max-width: 25em;
+}
+  
 }
