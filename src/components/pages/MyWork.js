@@ -55,7 +55,7 @@ function MyWork() {
               className="move-down flip-down"
               icon={faArrowTurnDown}
             />
-            <p> My Recent projects</p>
+            <p> My Projects</p>
             <FontAwesomeIcon className="move-down" icon={faArrowTurnDown} />
           </div>
         </div>
