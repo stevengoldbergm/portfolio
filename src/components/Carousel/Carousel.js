@@ -24,13 +24,37 @@ function Carousel() {
           pagination={{
             clickable: true,
           }}
-          // spaceBetween={0}
-          slidesPerView={4}
-          slidesPerGroup={2}
+          slidesPerView={1}
+          slidesPerGroup={1}
           // initialSlide={projects.length}
           autoplay={{ delay: 2000 }}
           grabCursor={true}
-          // rewind={true}
+          breakpoints= {{
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 1.5,
+            },
+            // when window width is >= 640px
+            680: {
+              slidesPerView: 2,
+            },
+            // when window width is >= 640px
+            880: {
+              slidesPerView: 2.5,
+            },
+            // when window width is >= 640px
+            1080: {
+              slidesPerView: 3,
+            },
+            // when window width is >= 640px
+            1280: {
+              slidesPerView: 3.5,
+            },
+            // when window width is >= 640px
+            1380: {
+              slidesPerView: 4,
+            }
+          }}
         >
           {projects.map((project) => {
             return (
