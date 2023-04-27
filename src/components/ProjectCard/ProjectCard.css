@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   margin-inline: auto;
-  height: 14rem;
+  height: 17rem;
   aspect-ratio: 2/1.75;
   color: black;
   box-shadow: 0 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.623);
@@ -94,6 +94,12 @@
 
 .card-button-container .card-button > a:hover {
   color: #ffab10;
+}
+
+@media screen and (max-width:21em ) {
+  .card-container {
+    height: 13.5rem;
+  }
 }
 
 @media screen and (min-width: 49em) {
