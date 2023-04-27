@@ -35,7 +35,7 @@ function App() {
       // navbar.style.top = '-3rem';
       navbar.style.height = "3rem";
       navbar.style.top = "0";
-      navbar.style.backgroundColor = "rgb(255, 255, 255, .75)"
+      navbar.style.backgroundColor = "var(--navbar)"
     }
   }, [isVisible, prevScrollPos]);
 
