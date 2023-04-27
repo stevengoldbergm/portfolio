@@ -1,23 +1,26 @@
 .hero {
   position: relative;
   /* height: 100vh; */
-  min-height: 45rem;
+  min-height: 41.5rem;
   background-image: url(../../assets/imgs/WebdevArt01.jpg);
-  background-size: 75%;
   background-position-x: center;
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-size: 130%;
 }
 
-@media screen and (min-width: 512px) {
+@media screen and (min-width: 17.55em ) {
   .hero {
-    background-position-x: right;
-    background-position-y: bottom;
-    background-size: 100%;
+    min-height: 47rem;
   }
 }
 
+@media screen and (min-width: 32em) {
+  .hero {
+    background-position-x: right;
+    background-size: 100%;
+  }
+}
 
 @media screen and (min-width: 55em) {
   .hero {
