@@ -34,8 +34,8 @@
 
 .li {
   position: relative;
-  padding-inline: 1em;
-  font-size: 0.8rem;
+  padding-left: 1em;
+  font-size: 1rem;
   font-weight: bold;
   color: var(--primary);
 }
@@ -89,7 +89,7 @@ a:visited {
 
 /* Media Queries */
 
-@media screen and (min-width: 784px) {
+@media screen and (min-width: 55em) {
   /* Navigation */
   .nav {
     position: fixed;
@@ -126,10 +126,7 @@ a:visited {
 
   .li {
     position: relative;
-    padding-inline: 1em;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--primary);
+    padding-left: 1em;
   }
 
   a,
@@ -141,7 +138,6 @@ a:visited {
   .a {
     position: relative;
     text-decoration: none;
-    color: var(--primary);
     transition: all ease-in-out 200ms;
   }
 
@@ -167,7 +163,6 @@ a:visited {
 
   .h2,
   .bold {
-    color: var(--primary);
     font-size: 2rem;
     align-self: flex-start;
     font-weight: bold;

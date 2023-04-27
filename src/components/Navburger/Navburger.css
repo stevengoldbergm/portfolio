@@ -74,7 +74,7 @@ transform: scaleX(0);
   transform: translateX(0);
 }
 
-@media screen and (min-width: 784px) {
+@media screen and (min-width: 55em) {
   .navburger {
     display: none;
   }
@@ -86,7 +86,7 @@ transform: scaleX(0);
   position: absolute;
   height: 110vh;
   width: 100vw;
-  background: rgba(42, 33, 5, 0.9);
+  background: var(--navbar);
   top: -2rem;
   right: 0;
   transform: translateX(100%);
@@ -107,7 +107,7 @@ transform: scaleX(0);
   margin-block: 1rem;
   font-weight: bold;
   font-size: 3rem;
-  color: White;
+  color: var(--primary);
   border-radius: .2rem;
   padding-inline: .5rem;
 }
