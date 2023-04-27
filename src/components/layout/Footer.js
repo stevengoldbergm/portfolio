@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Socials from "./Socials";
 
 // Import css
-import "./Footer.css"
+import "./Footer.css";
 
 // Make a footer
 function Footer() {
