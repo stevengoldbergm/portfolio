@@ -1,8 +1,7 @@
-import './Home.css'
+import "./Home.css";
 
 import downArrow from "../../assets/imgs/downArrow.svg";
 import resume from "../../assets/files/WebDeveloperResume_2023.pdf";
-
 
 function Home() {
   return (
@@ -11,7 +10,9 @@ function Home() {
         <h1 className="h1">Steven Goldberg</h1>
         <h2 className="h2">Web Developer</h2>
         <div className="flex-container">
-          <button className="button">Contact Me</button>
+          <button className="button">
+            <a href="#contact-me">Contact Me</a>
+          </button>
           <button className="button">
             <a href={resume} download="StevenGoldbergResume_2023.pdf">
               My Resume
