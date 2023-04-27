@@ -7,6 +7,7 @@
   --secondary-dark: rgb(165, 95, 80);
   --dark: rgb(40, 30, 30);
   --dark-light: rgb(55, 50, 67);
+  --navbar: rgb(233, 219, 180);
 
   /* Animation */
   --animation-timing: 200ms ease-in-out;
