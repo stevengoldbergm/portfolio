@@ -14,7 +14,6 @@ function ContactSection(props) {
         <div className="cs-column">
           {/* Put text here for the contact form */}
           <h1>Questions? Comments?</h1>
-          <br />
           <p>
             Feel free to{" "}
             <a className="e-mail" href="mailto:stevengoldbergm@gmail.com">
