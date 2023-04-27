@@ -2,7 +2,7 @@
 import { useRef } from "react";
 
 // Import css
-import "./ContactForm.css"
+import "./ContactForm.css";
 
 // Create component form for contact submission
 function ContactForm(props) {
@@ -44,7 +44,19 @@ function ContactForm(props) {
       utcDate,
     };
 
-    submitData(payload);
+    // Only send payload if all fields are filled
+    if (
+      fnInputRef.current.value !== "" &&
+      lnInputRef.current.value !== "" &&
+      emlInputRef.current.value !== "" &&
+      txtInputRef.current.value !== ""
+    ) {
+      submitData(payload);
+      // console.log("Payload Submitted");
+    } else {
+      // console.log("Payload not ready");
+      return;
+    }
   }
 
   function submitData(contactData) {
@@ -66,6 +78,7 @@ function ContactForm(props) {
     emlInputRef.current.value = "";
     txtInputRef.current.value = "";
   }
+
   return (
     <>
       <div className="form-container">
@@ -133,11 +146,7 @@ function ContactForm(props) {
             aria-label="Message Text"
             placeholder="Any comments or inquiries go here!"
           />
-          <button
-            className="form-btn"
-            type="submit"
-            onClick={handleFormSubmit}
-          >
+          <button className="form-btn" type="submit" onClick={handleFormSubmit}>
             Send me a message!
           </button>
         </form>
