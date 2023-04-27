@@ -47,6 +47,6 @@ body {
 }
 
 ::-webkit-scrollbar-button {
-  height: 2vh;
+  height: 2rem;
   background: rgb(195, 165, 205);
 }

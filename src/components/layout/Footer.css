@@ -1,5 +1,4 @@
 .footer {
-  max-height: 30vh;
   width: 100%;
   background-color: var(--dark);
   box-shadow: inset 0 1rem 0.5rem -0.3rem rgba(0, 0, 0, 0.141);
@@ -46,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 4vh;
+  height: 2rem;
   color: grey;
   background: var(--dark-light);
 }
@@ -65,7 +64,7 @@
 
 @media screen and (min-width: 62em) {
   .footer {
-    height: 30vh;
+    min-height: 10rem;
     width: 100%;
     background-color: var(--dark);
     box-shadow: inset 0 1rem 0.5rem -0.3rem rgba(0, 0, 0, 0.141);
@@ -109,7 +108,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4vh;
+    height: 2rem;
     color: grey;
     background: var(--dark-light);
   }

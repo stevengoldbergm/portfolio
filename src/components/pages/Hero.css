@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  /* height: 100vh; */
+  min-height: 45rem;
   background-image: url(../../assets/imgs/WebdevArt01.jpg);
   background-size: 75%;
   background-position-x: center;

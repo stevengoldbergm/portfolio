@@ -6,8 +6,8 @@
   justify-content: center;
   align-items: center;
   margin-inline: auto;
-  height: 30vh;
-  aspect-ratio: 2/1.5;
+  height: 14rem;
+  aspect-ratio: 2/1.75;
   color: black;
   box-shadow: 0 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.623);
   border-radius: 0.5rem;
@@ -45,7 +45,6 @@
   padding-inline: 0.5rem;
   padding-top: 0.5rem;
   font-size: 0.75rem;
-  overflow-x: auto;
   white-space: pre-wrap;
 }
 
@@ -99,11 +98,12 @@
 
 @media screen and (min-width: 49em) {
   .card-container {
-    height: 33vh;
+    height: 14rem;
+    aspect-ratio: 2/1.5;
   }
 
   .card-body {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .card-footer {
