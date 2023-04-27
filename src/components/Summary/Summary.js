@@ -33,7 +33,7 @@ function Summary(props) {
             If you're looking for a developer with great communication skills, a
             growth mindset, and a strong work ethic, contact me below!
           </p>
-
+{/* 
           <div className="down-arrow">
             <a href="#contact-me">
               <img
@@ -42,7 +42,7 @@ function Summary(props) {
                 alt="A downward facing arrow"
               />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
