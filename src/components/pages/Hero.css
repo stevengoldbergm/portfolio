@@ -1,5 +1,5 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../../assets/imgs/WebdevArt01.jpg);
   background-size: 75%;
   background-position-x: center;
@@ -10,18 +10,14 @@
 
 @media screen and (min-width: 512px) {
   .hero {
-    height: 100vh;
-    background-image: url(../../assets/imgs/WebdevArt01.jpg);
-    background-size: 75%;
     background-position-x: right;
-    background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 100%;
   }
 }
 
 
-@media screen and (min-width: 784px) {
+@media screen and (min-width: 55em) {
   .hero {
     background-size: 80%;
   }
