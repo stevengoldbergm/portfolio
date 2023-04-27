@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.7c88166e.css",
+    "main.js": "/portfolio/static/js/main.482f76aa.js",
+    "static/media/WebdevArt02.png": "/portfolio/static/media/WebdevArt02.00cf8a6aa4b6e77f32d4.png",
+    "static/media/WebdevArt01.jpg": "/portfolio/static/media/WebdevArt01.ab0bd2aa3240e2295dad.jpg",
+    "static/media/MovieMate3.0.png": "/portfolio/static/media/MovieMate3.0.0ef62519e48ac03df7f1.png",
+    "static/media/headshot.png": "/portfolio/static/media/headshot.1b6c749a4d2f3f040e6a.png",
+    "static/media/WebDeveloperResume_2023.pdf": "/portfolio/static/media/WebDeveloperResume_2023.608fc3dfaa5448cb90dc.pdf",
+    "static/media/MovieMate2.0.png": "/portfolio/static/media/MovieMate2.0.735de98f8a9e23ca182d.png",
+    "static/media/Weather.png": "/portfolio/static/media/Weather.49bbe287a159dfc164c9.png",
+    "static/media/WorkdayScheduler.png": "/portfolio/static/media/WorkdayScheduler.34740dba139636ca36a2.png",
+    "static/media/TechBlog.png": "/portfolio/static/media/TechBlog.0a3d6b8337610c0af57b.png",
+    "static/media/NoteTaker.png": "/portfolio/static/media/NoteTaker.a9c8ac72025854c39b4c.png",
+    "static/media/JATE.png": "/portfolio/static/media/JATE.0e5716ada02f11d47875.png",
+    "static/media/insomnia.svg": "/portfolio/static/media/insomnia.2ed47b2bf3143f866d43134a90250859.svg",
+    "static/media/downArrow.svg": "/portfolio/static/media/downArrow.17a5e3b13c220db3a883f7bf216b68dc.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/mongoDbCompass.svg": "/portfolio/static/media/mongoDbCompass.67761c18dd27879104c98bfc4930d459.svg",
+    "main.7c88166e.css.map": "/portfolio/static/css/main.7c88166e.css.map",
+    "main.482f76aa.js.map": "/portfolio/static/js/main.482f76aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c88166e.css",
+    "static/js/main.482f76aa.js"
+  ]
+}
