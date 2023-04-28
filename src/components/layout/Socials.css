@@ -11,10 +11,14 @@
   transition: 300ms ease-in-out;
 }
 
+.socials > a:visited {
+  color: var(--secondary-dark);
+}
+
 .socials > a:hover {
   color: var(--secondary);
 }
 
 .socials > a {
-  margin-inline: .5rem;
+  margin-inline: 0.5rem;
 }

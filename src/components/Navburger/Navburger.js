@@ -1,9 +1,8 @@
 // Import css
+import Footer from "../layout/Footer";
 import "./Navburger.css";
 
-function Navburger({burgerCheck}) {
-  
-
+function Navburger({ burgerCheck }) {
   function handleBurger() {
     // Find borgr
     const burgerCheck = document.querySelector(".navburger > input");
@@ -21,18 +20,23 @@ function Navburger({burgerCheck}) {
       </label>
       <aside className="menu">
         <nav className="navburger-menu">
-          <a className="a" href="#home" onClick={handleBurger}>
-            Home
-          </a>
-          <a className="a" href="#tech-stack" onClick={handleBurger}>
-            Tech
-          </a>
-          <a className="a" href="#about-me" onClick={handleBurger}>
-            About
-          </a>
-          <a className="a" href="#contact-me" onClick={handleBurger}>
-            Contact
-          </a>
+          <div className="navburger-menu-container">
+            <a className="a" href="#home" onClick={handleBurger}>
+              Home
+            </a>
+            <a className="a" href="#tech-stack" onClick={handleBurger}>
+              Tech
+            </a>
+            <a className="a" href="#about-me" onClick={handleBurger}>
+              About
+            </a>
+            <a className="a" href="#contact-me" onClick={handleBurger}>
+              Contact
+            </a>
+          </div>
+          <div className="footer-container">
+            <Footer />
+          </div>
         </nav>
       </aside>
     </>

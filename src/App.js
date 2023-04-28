@@ -28,7 +28,8 @@ function App() {
     
     console.log(navbar);
     if (isVisible) {
-      navbar.style.top = '1rem';
+      // navbar.style.top = '1rem';
+      navbar.style.top = '0';
       navbar.style.height = "4rem";
       navbar.style.backgroundColor = "rgba(255, 255, 255, 0)"
     } else {
