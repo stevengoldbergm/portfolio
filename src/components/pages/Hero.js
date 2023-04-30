@@ -1,14 +1,12 @@
 import Home from "../Home/Home";
 import Overlay from "../Overlay/Overlay";
-import "./Hero.css"
+import "./Hero.css";
 
-
-
-function Hero(props) {
+function Hero({ handleModal }) {
   return (
     <div id="home" className="hero">
       <Overlay />
-      <Home />
+      <Home handleModal={handleModal} />
     </div>
   );
 }

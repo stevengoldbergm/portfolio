@@ -3,7 +3,7 @@ import "./Home.css";
 import downArrow from "../../assets/imgs/downArrow.svg";
 import resume from "../../assets/files/WebDeveloperResume_2023.pdf";
 
-function Home() {
+function Home({ handleModal }) {
   return (
     <>
       <main className="home">
@@ -11,7 +11,8 @@ function Home() {
         <h2 className="h2">Web Developer</h2>
         <div className="flex-container">
           <button className="button">
-            <a href="#contact-me">Contact Me</a>
+            {/* <a href="#contact-me">Contact Me</a> */}
+            <div onClick={handleModal}>Contact Me</div>
           </button>
           <button className="button">
             <a href={resume} download="StevenGoldbergResume_2023.pdf">
