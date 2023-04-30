@@ -10,9 +10,9 @@ function Home({ handleModal }) {
         <h1 className="h1">Steven Goldberg</h1>
         <h2 className="h2">Web Developer</h2>
         <div className="flex-container">
-          <button className="button">
+          <button className="button" onClick={handleModal}>
             {/* <a href="#contact-me">Contact Me</a> */}
-            <div onClick={handleModal}>Contact Me</div>
+            <div >Contact Me</div>
           </button>
           <button className="button">
             <a href={resume} download="StevenGoldbergResume_2023.pdf">
