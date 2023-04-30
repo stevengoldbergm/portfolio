@@ -1,0 +1,44 @@
+/* Modal */
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+  opacity: 0;
+  overflow-y: hidden;
+  transition: opacity var(--animation-timing);
+  pointer-events: all;
+}
+.modal-content {
+  display: flex;
+  justify-content: center;
+  width: 24rem;
+  min-width: 16.5rem;
+  max-width: 90%;
+  margin: auto;
+  z-index: 14;
+  overflow-y: hidden;
+  transition: opacity var(--animation-timing);
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 13;
+}
+
+@media screen and (min-width: 55em) {
+  .modal-content {
+    max-width: 24rem;
+  }
+}

@@ -1,19 +1,14 @@
 import ContactForm from "../ContactForm/ContactForm";
-import classes from "./Modal.module.css";
+import "./Modal.css"
 
-function Modal({ isVisible, handleIsVisible }) {
+function Modal({ handleModal }) {
   return (
-    <>
-      {isVisible && (
-        <div
-          id="modal"
-          className={`${classes.modal} ${classes.leadIn}`}
-          onClick={handleIsVisible}
-        >
-          <ContactForm />
-        </div>
-      )}
-    </>
+    <div className="modal">
+      <div className="modal-content">
+        <ContactForm />
+      </div>
+      <div className="modal-backdrop" onClick={handleModal}></div>
+    </div>
   );
 }
 
