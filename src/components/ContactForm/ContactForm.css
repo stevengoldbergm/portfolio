@@ -8,7 +8,7 @@
 }
 
 .contact-form {
-  width: 90%;
+  width: 100%;
   max-width: 25em;
   display: flex;
   flex-direction: column;
@@ -36,6 +36,7 @@
 .form-label {
   color: var(--primary);
   margin-block: 0.5rem;
+  pointer-events: none;
 }
 
 .form-input,
@@ -116,7 +117,6 @@ textarea:focus::-webkit-resizer {
   }
 
   .contact-form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -135,7 +135,7 @@ function ContactForm(props) {
             />
           </div>
           {/* Message Text */}
-          <label htmlFor="inputText" className="form-label">
+          <label className="form-label" htmlFor="inputText" >
             Comments:
           </label>
           <textarea
