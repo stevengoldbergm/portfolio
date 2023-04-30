@@ -13,9 +13,12 @@ import MyWork from "./components/pages/MyWork";
 import AboutMe from "./components/pages/AboutMe";
 import Contact from "./components/pages/Contact";
 import Footer from "./components/layout/Footer";
-
+import Modal from "./components/ui/Modal";
 
 function App() {
+  // // Set state for Modal visibility
+  const [modalVisible, setModalVisible] = useState(false);
+
   // Set up State for navbar visibility
   const [isVisible, setIsVisible] = useState(true);
 
@@ -24,21 +27,39 @@ function App() {
 
   // set up useEffect to track navbar
   useEffect(() => {
+    // Find navbar and modal
     const navbar = document.querySelector(".nav");
-    
+    const modal = document.querySelector(".modal");
+    const root = document.querySelector("#root");
+
+    // Change navbar style based on state
     console.log(navbar);
     if (isVisible) {
       // navbar.style.top = '1rem';
-      navbar.style.top = '0';
+      navbar.style.top = "0";
       navbar.style.height = "4rem";
-      navbar.style.backgroundColor = "rgba(255, 255, 255, 0)"
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 0)";
     } else {
       // navbar.style.top = '-3rem';
       navbar.style.height = "3rem";
       navbar.style.top = "0";
-      navbar.style.backgroundColor = "var(--navbar)"
+      navbar.style.backgroundColor = "var(--navbar)";
     }
-  }, [isVisible, prevScrollPos]);
+
+    // Change modal visibility based on state and lock screen
+    console.log(modalVisible);
+    if (modalVisible) {
+      modal.style.opacity = "100";
+      modal.style.pointerEvents = "all";
+      root.style.height = "100vh";
+      root.style.overflowY = "hidden";
+    } else {
+      modal.style.opacity = "0";
+      modal.style.pointerEvents = "none";
+      root.style.height = "auto";
+      root.style.overflowY = "visible";
+    }
+  }, [isVisible, prevScrollPos, modalVisible]);
 
   // on scroll, update the Y position
   window.onscroll = () => {
@@ -59,13 +80,16 @@ function App() {
     }
   };
 
+  function handleModal() {
+    setModalVisible(!modalVisible);
+  }
   return (
     // used to be layout object
-    <> 
+    <>
       <Navbar />
 
       {/* Home page */}
-      <Hero />
+      <Hero handleModal={handleModal} />
 
       {/* Tech Stack page */}
       <MyWork />
@@ -79,11 +103,9 @@ function App() {
       {/* Footer */}
       <Footer />
 
-      
+      <Modal handleModal={handleModal} />
     </>
   );
 }
-
-
 
 export default App;
