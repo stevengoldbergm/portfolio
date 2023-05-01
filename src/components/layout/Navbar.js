@@ -2,11 +2,17 @@
 import Navburger from "../Navburger/Navburger";
 import "./Navbar.css";
 
+// import logo svg
+import logo from "../../assets/imgs/logo.svg"
+
 function Navbar({ burger }) {
   return (
     <div className="nav">
       <div className="nav-row">
-        <a href="#home" className="bold h2">SG</a>
+        <a href="#home" className="bold h2">
+          {/* SG  */}
+          <div className="logo-mask" />
+        </a>
         <ul className="ul">
           <li className="li">
             <a className="a" href="#home">
