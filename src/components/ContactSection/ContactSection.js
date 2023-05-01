@@ -2,10 +2,10 @@
 import ContactForm from "../ContactForm/ContactForm";
 
 // Import images
-import webDev02 from '../../assets/imgs/WebdevArt02.png'
+import webDev02 from "../../assets/imgs/WebdevArt02.png";
 
 // Import css
-import './ContactSection.css'
+import "./ContactSection.css";
 
 function ContactSection(props) {
   return (
@@ -22,7 +22,9 @@ function ContactSection(props) {
             <br />
             Or send me a message and I'll get back to you!
           </p>
-          <ContactForm />
+          <div className="cs-column">
+            <ContactForm />
+          </div>
         </div>
         <div className="cs-column">
           <img alt="Illustration of two people using laptops" src={webDev02} />

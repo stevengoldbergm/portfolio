@@ -6,7 +6,7 @@ function Navbar({ burger }) {
   return (
     <div className="nav">
       <div className="nav-row">
-        <div className="bold h2">SG</div>
+        <a href="#home" className="bold h2">SG</a>
         <ul className="ul">
           <li className="li">
             <a className="a" href="#home">
