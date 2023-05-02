@@ -30,22 +30,28 @@ const frontEnd = [
         id: 5
     },
     {
+        reference: 'https://handlebarsjs.com/',
+        source: "https://www.vectorlogo.zone/logos/handlebarsjs/handlebarsjs-icon.svg",
+        altText: "Handlebars",
+        id: 6
+    },
+    {
         reference: 'https://sass-lang.com/',
         source: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sass-colored.svg",
         altText: "SASS",
-        id: 6
+        id: 7
     },
     {
         reference: 'https://getbootstrap.com/',
         source: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg",
         altText: "Bootstrap",
-        id: 7
+        id: 8
     },
     {
         reference: 'https://bulma.io',
         source: "https://cdn.worldvectorlogo.com/logos/bulma.svg",
         altText: "Bulma",
-        id: 8
+        id: 9
     },
 ];
 export default frontEnd;
