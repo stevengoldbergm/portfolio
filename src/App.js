@@ -84,7 +84,7 @@ function App() {
   function handleModal() {
     setModalVisible(!modalVisible);
   }
-  
+
   return (
     // used to be layout object
     <Wrapper>
