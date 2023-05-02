@@ -118,7 +118,7 @@ a:visited {
   /* Navigation */
   .nav {
     position: fixed;
-    width: 100%;
+    max-width: 1100px;
     height: 4rem;
     top: 1rem;
     display: flex;
