@@ -5,7 +5,7 @@ import { useRef } from "react";
 import "./ContactForm.css";
 
 // Create component form for contact submission
-function ContactForm(props) {
+function ContactForm() {
   // useRef to make easy forms. Could useState, but it's more work.
   const fnInputRef = useRef();
   const lnInputRef = useRef();
@@ -61,16 +61,20 @@ function ContactForm(props) {
 
   function submitData(contactData) {
     // send HTTP fetch request to post data on firebase server
-    fetch(
-      "https://portfolio-contact-193c3-default-rtdb.firebaseio.com/contacts.json",
-      {
-        method: "POST",
-        body: JSON.stringify(contactData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    try {
+      fetch(
+        "https://portfolio-contact-193c3-default-rtdb.firebaseio.com/contacts.json",
+        {
+          method: "POST",
+          body: JSON.stringify(contactData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
 
     // Clear the payload
     fnInputRef.current.value = "";
@@ -135,7 +139,7 @@ function ContactForm(props) {
             />
           </div>
           {/* Message Text */}
-          <label className="form-label" htmlFor="inputText" >
+          <label className="form-label" htmlFor="inputText">
             Comments:
           </label>
           <textarea
