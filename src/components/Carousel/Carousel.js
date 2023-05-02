@@ -27,7 +27,7 @@ function Carousel() {
           slidesPerView={1}
           slidesPerGroup={1}
           // initialSlide={projects.length}
-          autoplay={{ delay: 2000 }}
+          // autoplay={{ delay: 2000 }}
           grabCursor={true}
           breakpoints= {{
             // when window width is >= 480px
@@ -46,14 +46,14 @@ function Carousel() {
             1080: {
               slidesPerView: 3,
             },
-            // when window width is >= 640px
-            1280: {
-              slidesPerView: 3.5,
-            },
-            // when window width is >= 640px
-            1380: {
-              slidesPerView: 4,
-            }
+            // // when window width is >= 640px
+            // 1280: {
+            //   slidesPerView: 3.5,
+            // },
+            // // when window width is >= 640px
+            // 1380: {
+            //   slidesPerView: 4,
+            // }
           }}
         >
           {projects.map((project) => {
