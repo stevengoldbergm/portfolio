@@ -19,8 +19,9 @@ function TechSwiper({ tech }) {
       //   clickable: true,
       // }}
       // scrollbar={{ draggable: true }}
-      shortSwipes={false}
-      autoplay={{ delay: 2000, reverseDirection: true }}
+      // shortSwipes={false}
+      autoplay={{ delay: 2000 }}
+      // autoplay={{ delay: 2000, reverseDirection: true }}
       grabCursor={true}
       spaceBetween={0}
       slidesPerView={3}
@@ -45,14 +46,14 @@ function TechSwiper({ tech }) {
         1080: {
           slidesPerView: 3,
         },
-        // when window width is >= 640px
-        1280: {
-          slidesPerView: 3.5,
-        },
-        // when window width is >= 640px
-        1380: {
-          slidesPerView: 4,
-        }
+        // // when window width is >= 640px
+        // 1280: {
+        //   slidesPerView: 3.5,
+        // },
+        // // when window width is >= 640px
+        // 1380: {
+        //   slidesPerView: 4,
+        // }
       }}
     >
       {/* Map through data to make badges */}
