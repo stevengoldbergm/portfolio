@@ -14,6 +14,7 @@ import AboutMe from "./components/pages/AboutMe";
 import Contact from "./components/pages/Contact";
 import Footer from "./components/layout/Footer";
 import Modal from "./components/ui/Modal";
+import Wrapper from "./components/Wrapper/Wrapper";
 
 function App() {
   // // Set state for Modal visibility
@@ -83,9 +84,10 @@ function App() {
   function handleModal() {
     setModalVisible(!modalVisible);
   }
+  
   return (
     // used to be layout object
-    <>
+    <Wrapper>
       <Navbar />
 
       {/* Home page */}
@@ -104,7 +106,7 @@ function App() {
       <Footer />
 
       <Modal handleModal={handleModal} />
-    </>
+    </Wrapper>
   );
 }
 
