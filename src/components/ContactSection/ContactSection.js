@@ -15,9 +15,12 @@ function ContactSection(props) {
           {/* Put text here for the contact form */}
           <h1>Questions? Comments?</h1>
           <p>
-            Feel free to{" "}
+            {/* ✉ */}
+            Feel free to e-mail me: {" "}
+            {/* ✉ */}
+            <br />
             <a className="e-mail" href="mailto:stevengoldbergm@gmail.com">
-              e-mail me ✉
+              stevengoldbergm@gmail.com
             </a>
             <br />
             Or send me a message and I'll get back to you!
