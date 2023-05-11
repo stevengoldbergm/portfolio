@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.bf5c7b01.css",
-    "main.js": "/portfolio/static/js/main.2be3379a.js",
+    "main.css": "/portfolio/static/css/main.e8ef2939.css",
+    "main.js": "/portfolio/static/js/main.58fcac12.js",
     "static/media/WebdevArt02.png": "/portfolio/static/media/WebdevArt02.00cf8a6aa4b6e77f32d4.png",
     "static/media/WebdevArt01.jpg": "/portfolio/static/media/WebdevArt01.ab0bd2aa3240e2295dad.jpg",
     "static/media/MovieMate3.0.png": "/portfolio/static/media/MovieMate3.0.0ef62519e48ac03df7f1.png",
@@ -19,11 +19,11 @@
     "static/media/downArrow.svg": "/portfolio/static/media/downArrow.17a5e3b13c220db3a883f7bf216b68dc.svg",
     "index.html": "/portfolio/index.html",
     "static/media/mongoDbCompass.svg": "/portfolio/static/media/mongoDbCompass.67761c18dd27879104c98bfc4930d459.svg",
-    "main.bf5c7b01.css.map": "/portfolio/static/css/main.bf5c7b01.css.map",
-    "main.2be3379a.js.map": "/portfolio/static/js/main.2be3379a.js.map"
+    "main.e8ef2939.css.map": "/portfolio/static/css/main.e8ef2939.css.map",
+    "main.58fcac12.js.map": "/portfolio/static/js/main.58fcac12.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf5c7b01.css",
-    "static/js/main.2be3379a.js"
+    "static/css/main.e8ef2939.css",
+    "static/js/main.58fcac12.js"
   ]
 }
