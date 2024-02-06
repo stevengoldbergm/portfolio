@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.e8ef2939.css",
-    "main.js": "/portfolio/static/js/main.58fcac12.js",
+    "main.js": "/portfolio/static/js/main.f0dd18c5.js",
     "static/media/WebdevArt02.png": "/portfolio/static/media/WebdevArt02.00cf8a6aa4b6e77f32d4.png",
     "static/media/WebdevArt01.jpg": "/portfolio/static/media/WebdevArt01.ab0bd2aa3240e2295dad.jpg",
     "static/media/MovieMate3.0.png": "/portfolio/static/media/MovieMate3.0.0ef62519e48ac03df7f1.png",
     "static/media/headshot.png": "/portfolio/static/media/headshot.1b6c749a4d2f3f040e6a.png",
-    "static/media/WebDeveloperResume_2023.pdf": "/portfolio/static/media/WebDeveloperResume_2023.cef0677d894109065dbc.pdf",
+    "static/media/WebDeveloperResume_2024.pdf": "/portfolio/static/media/WebDeveloperResume_2024.d533dab3d714f9fc2927.pdf",
     "static/media/MovieMate2.0.png": "/portfolio/static/media/MovieMate2.0.735de98f8a9e23ca182d.png",
     "static/media/Weather.png": "/portfolio/static/media/Weather.49bbe287a159dfc164c9.png",
     "static/media/WorkdayScheduler.png": "/portfolio/static/media/WorkdayScheduler.34740dba139636ca36a2.png",
@@ -14,16 +14,17 @@
     "static/media/NoteTaker.png": "/portfolio/static/media/NoteTaker.a9c8ac72025854c39b4c.png",
     "static/media/JATE.png": "/portfolio/static/media/JATE.0e5716ada02f11d47875.png",
     "static/media/logo3.svg": "/portfolio/static/media/logo3.ebf0f7167a3abbb038aa.svg",
-    "static/media/logo.svg": "/portfolio/static/media/logo.fb8f15774fa3837aadad537976ee7490.svg",
     "static/media/insomnia.svg": "/portfolio/static/media/insomnia.2ed47b2bf3143f866d43134a90250859.svg",
     "static/media/downArrow.svg": "/portfolio/static/media/downArrow.17a5e3b13c220db3a883f7bf216b68dc.svg",
+    "static/media/wordpress-svgrepo-com.svg": "/portfolio/static/media/wordpress-svgrepo-com.b0aed223c0d5ce08d56a355367f87f98.svg",
     "index.html": "/portfolio/index.html",
     "static/media/mongoDbCompass.svg": "/portfolio/static/media/mongoDbCompass.67761c18dd27879104c98bfc4930d459.svg",
+    "static/media/office-1-logo-svgrepo-com.svg": "/portfolio/static/media/office-1-logo-svgrepo-com.bd26a2c85d0990428bf63fe4232aacec.svg",
     "main.e8ef2939.css.map": "/portfolio/static/css/main.e8ef2939.css.map",
-    "main.58fcac12.js.map": "/portfolio/static/js/main.58fcac12.js.map"
+    "main.f0dd18c5.js.map": "/portfolio/static/js/main.f0dd18c5.js.map"
   },
   "entrypoints": [
     "static/css/main.e8ef2939.css",
-    "static/js/main.58fcac12.js"
+    "static/js/main.f0dd18c5.js"
   ]
 }
