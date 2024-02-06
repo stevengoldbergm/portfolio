@@ -1,7 +1,7 @@
 import "./Home.css";
 
 import downArrow from "../../assets/imgs/downArrow.svg";
-import resume from "../../assets/files/WebDeveloperResume_2023.pdf";
+import resume from "../../assets/files/WebDeveloperResume_2024.pdf";
 
 function Home({ handleModal }) {
   return (
@@ -15,7 +15,7 @@ function Home({ handleModal }) {
             <div >Contact Me</div>
           </button>
           <button className="button">
-            <a href={resume} download="StevenGoldbergResume_2023.pdf">
+            <a href={resume} download="StevenGoldbergResume_2024.pdf">
               My Resume
             </a>
           </button>
