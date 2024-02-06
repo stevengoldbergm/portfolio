@@ -3,7 +3,7 @@ import Navburger from "../Navburger/Navburger";
 import "./Navbar.css";
 
 // import logo svg
-import logo from "../../assets/imgs/logo.svg"
+// import logo from "../../assets/imgs/logo.svg"
 
 function Navbar({ burger }) {
   return (

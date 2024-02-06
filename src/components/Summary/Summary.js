@@ -1,6 +1,6 @@
 // Import images
 import headshot from '../../assets/imgs/headshot.png'
-import downArrow from '../../assets/imgs/downArrow.svg'
+// import downArrow from '../../assets/imgs/downArrow.svg'
 
 // Import css
 import './Summary.css'
