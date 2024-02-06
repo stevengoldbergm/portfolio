@@ -1,6 +1,7 @@
 // Import local SVGs
 import insomnia from "../imgs/insomnia.svg"
 import mongoDBC from "../imgs/mongoDbCompass.svg"
+import msOffice from "../imgs/office-1-logo-svgrepo-com.svg"
 
 const programs = [
     {
@@ -35,7 +36,7 @@ const programs = [
     },
     {
         reference: 'https://www.microsoft.com/en-us/microsoft-365',
-        source: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/512px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png",
+        source: msOffice,
         altText: "MS Office",
         id: 6
     },
