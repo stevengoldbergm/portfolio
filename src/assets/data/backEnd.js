@@ -1,3 +1,7 @@
+// Import local SVGs
+import wordpress from "../imgs/wordpress-svgrepo-com.svg"
+
+// Set up the array of data objects
 const backEnd = [
     {
         reference: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5https://nodejs.org/en/',
@@ -43,7 +47,7 @@ const backEnd = [
     },
     {
         reference: 'https://wordpress.org',
-        source: "https://cdn.worldvectorlogo.com/logos/wordpress-blue.svg",
+        source: wordpress,
         altText: "WordPress",
         id: 8
     },
