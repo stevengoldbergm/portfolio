@@ -32,7 +32,7 @@ function Footer() {
       </footer>
       <div className="copyright">
         <FontAwesomeIcon icon={faCopyright} />
-        <p>Steven Goldberg 2023</p>
+        <p>Steven Goldberg 2024</p>
       </div>
     </>
   );
